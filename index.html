@@ -1,0 +1,30 @@
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>XHR Test</title>
+</head>
+<body>
+<button id="get">GET</button>
+<br/><br/>
+<button id="post">POST</button>
+<br/><br/>
+
+<script>
+  window.addEventListener('load', function () {
+
+    document.getElementById('get').addEventListener('click', function () {
+      var xhr = new XMLHttpRequest();
+      xhr.open('GET', '/index.html?param1=value1&param2=value2', true);
+      xhr.send(null);
+    });
+
+    document.getElementById('post').addEventListener('click', function () {
+      var xhr = new XMLHttpRequest();
+      xhr.open('POST', '/index.html', true);
+      var params = 'param1=value1&param2=value2';
+      xhr.send(params);
+    });
+  });
+</script>
+</body>
+</html>
